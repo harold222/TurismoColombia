@@ -1,0 +1,379 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kalam', cursive;/* Tipografia de google */
+}
+
+/*---------------------Estilo para el header--------------------*/
+.padre{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.header{
+    background: url(../img/2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.menu{
+    background: rgba(0, 0, 0, .1);
+    border-bottom: 2px solid gainsboro;
+    display: flex;/* Uno al lado del otro */
+    flex-flow: row nowrap;/* Se muestra en filas */
+    align-items: center;
+    height: 70px;
+}
+
+.logo{
+    flex: 1 1 auto;/* Tamaño de cada uno */   
+}
+
+.logo a{
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    transition: all 0.5s;/* Suavisado de la animacion */
+}
+
+.logo a:hover{
+    color: rgb(143, 139, 139);
+}
+
+.logo img{
+    transition: all 1s;
+}
+
+.logo img:hover{
+    -webkit-transform:scale(1.3);transform:scale(1.3);/* Agranda la img */
+}
+
+.nav{
+    
+    flex: 4 1 auto;
+}
+
+.nav a{
+    color:#fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.5s;
+    padding: 0 10px;
+    letter-spacing: 2px;/* Separacion de cada uno */
+}
+
+.nav a:hover{
+    font-size: 16px;
+    color: rgb(151, 146, 146);
+    text-transform: uppercase;
+}
+
+.social{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.social a{
+    font-size: 18px;
+    color:#fff;
+    padding: 0 5px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.social a:hover{
+    font-size: 22px;
+    color:rgb(186, 191, 243);
+}
+
+.text-principal{
+    height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+.text-principal h1{
+    font-size: 25px;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+    animation: type 3s steps(22);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid black;
+    width: 100ch;
+}
+
+@keyframes type{
+    0%{
+        width: 0ch;
+    }
+}
+  
+/*---------------------Fin de estilos para el header--------------------*/
+
+
+
+/*---------------------Estilos para el principal--------------------*/
+
+.section{
+    background: #f7f7f7;
+    display: flex;
+}
+
+.articulos{
+    background: #f7f7f7;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row wrap;/* Bajan automaticamente */
+}
+
+.article{
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 10px 10px 0 0px;
+    flex: 1 1 45%;
+    background: #ececec;
+    text-align: center;
+}
+
+.article img{
+    width: 100%;
+    transition: all 1s;
+}
+
+.article img:hover{
+    filter: opacity(.2);
+    cursor: pointer;
+}
+
+.article h3{
+    background-color: black;
+    color: #fff;
+    font-size: 26px;
+    padding: 10px 0;
+    margin-top: -80px;
+}
+
+.article h2{
+    color: #fff;
+    font-size: 25px;
+    padding: 0px 0 10px 0;
+}
+
+.article button{
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.navegacion{
+    background: #000;
+    flex: 1 1 100%;
+    margin: 10px 10px 0 0px;
+    text-align: center;
+}
+
+.navegacion a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 10px;
+    letter-spacing: 2px;
+}
+
+.aside{
+    flex: 1 1 auto;
+    margin: 10px 5px 10px 0px;
+}
+
+.aside h4{
+    background: #000;
+    color: #fff;
+    padding:10px;
+    transition: all 1s;
+}
+
+.aside h4:hover{
+    text-align: center;
+    color: rgb(243, 197, 197);
+}
+
+.publicidad img{
+    transition: all 1s;
+}
+
+.publicidad img:hover{
+    -webkit-transform:scale(0.9);
+    transform:scale(0.9);
+    cursor: pointer;
+}
+/*---------------------Fin de Estilos para el principal--------------------*/
+
+
+
+/*---------------------Estilos para el footer--------------------*/
+
+.footer{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+.pie{
+    text-align: center;
+    padding: 5px;
+    padding-top: 10px;
+    width: 400px;
+}
+
+.pie a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+/*---------------------Fin de estilos para el footer--------------------*/
+
+/*-------------------------------Estilos Responsive----------------------------*/
+
+@media all and (max-width:1450px){
+    .article{
+        font-size: 16px;
+    }
+    
+    .article h3{
+        font-size: 35px;
+        margin-top: -120px;
+    }
+    
+    .article h2{
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width:1080px){
+    .article{
+        font-size: 14px;
+    }
+    
+    .article h3{
+        font-size: 28px;
+        margin-top: -130px;
+    }
+    
+}
+
+@media all and (max-width:800px){
+    .menu{
+        flex-direction: column;
+        height: auto;/* Adapto al contenedor */
+    }
+
+    .section{
+        flex-direction: column;
+    }
+
+    .aside{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .publicidad{
+        margin: 10px 10px 0 0px;
+    }
+}
+
+@media all and (max-width:600px){
+    .article{
+        margin: 10px 0px 0 0px;
+        border-bottom: 2px solid black;
+    }
+    
+    .articulos{
+        flex-direction: column;
+    }
+
+    .article h3{
+        font-size: 35px;
+        margin-top: -110px;
+    }
+
+    .navegacion{
+        padding:10px;
+        margin: 10px 0px 0 0px;
+    }
+
+    .navegacion a{
+        border: 1px solid white;
+    }
+
+    .text-principal h1{
+        animation: type 0s steps(0);
+        overflow: unset;
+        white-space: normal;
+    }
+}
+
+@media all and (max-width: 575px){
+    .publicidad{
+        width: 85%;
+    }
+
+    .publicidad img{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 550px){
+    .quitar{
+        display: none;
+    }
+
+    .nav a{
+        font-size: 24px;
+    }
+}
+
+@media all and (max-width:390px){
+
+    .article h3{
+        font-size: 30px;
+        margin-top: -120px;
+    }
+
+   .article h2{
+       font-size: 22px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
