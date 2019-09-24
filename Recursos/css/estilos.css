@@ -6,6 +6,8 @@
 
 body{
     font-family: 'Kalam', cursive;/* Tipografia de google */
+    background: rgb(80,221,223);
+background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(253,187,45,1) 100%);
 }
 
 /*---------------------Estilo para el header--------------------*/
@@ -97,6 +99,7 @@ body{
     height: 450px;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid black;
 }
 
 .text-principal h1{
@@ -124,13 +127,21 @@ body{
 
 /*---------------------Estilos para el principal--------------------*/
 
+.content-video iframe{
+	width: 100%;
+	margin: 20px 0px;
+	height: 380px;
+}
+
 .section{
-    background: #f7f7f7;
+    background: rgb(80,221,223);
+background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(253,187,45,1) 100%);
     display: flex;
 }
 
 .articulos{
-    background: #f7f7f7;
+    background: rgb(80,221,223);
+background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(253,187,45,1) 100%);
     flex: 2 1 auto;
     display: flex;
     flex-flow: row wrap;/* Bajan automaticamente */
@@ -178,16 +189,17 @@ body{
 }
 
 .navegacion{
-    background: #000;
+    background:#ececec;
     flex: 1 1 100%;
     margin: 10px 10px 0 0px;
     text-align: center;
+    padding: 6px;
 }
 
 .navegacion a{
-    color: #fff;
-    font-size: 15px;
-    padding: 5px 10px;
+    color: #000;
+    font-size: 19px;
+    padding: 15px;
     letter-spacing: 2px;
 }
 
@@ -219,6 +231,51 @@ body{
 }
 /*---------------------Fin de Estilos para el principal--------------------*/
 
+/*---------------------Estilos para el formulario del contacto--------------------*/
+
+.contactos{
+	width: 450px;
+	margin: auto;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border-radius: 7px;
+}
+
+.contactos h2{
+	color: white;
+	text-align: center;
+	margin:0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.contactos input,textarea{
+	width:100%;
+	margin-bottom: 20px;
+	padding: 7px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+}
+
+.contactos textarea{
+	min-height: 100px;
+	max-height: 200px;
+	max-width: 100%;
+}
+
+#botonContact{
+	background: rgb(33, 79, 195);
+	color: #fff;
+	padding: 20px;
+}
+
+#botonContact:hover {
+	cursor: pointer;
+}
+/*---------------------Fin de Estilos para el formulario del contacto--------------------*/
 
 
 /*---------------------Estilos para el footer--------------------*/
@@ -315,13 +372,10 @@ body{
     }
 
     .navegacion{
-        padding:10px;
         margin: 10px 0px 0 0px;
     }
 
-    .navegacion a{
-        border: 1px solid white;
-    }
+    
 
     .text-principal h1{
         animation: type 0s steps(0);
@@ -348,6 +402,19 @@ body{
     .nav a{
         font-size: 24px;
     }
+
+    .pie a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 428px){
+
+	.contactos{
+		width: 350px;
+		margin: auto;
+	}
+
 }
 
 @media all and (max-width:390px){
@@ -361,6 +428,23 @@ body{
        font-size: 22px;
    }
 }
+
+@media screen and (max-width: 329px){
+	
+	.contactos{
+		width: 300px;
+		margin: auto;
+	}
+
+}
+
+@media all and (max-width: 300px){
+    .pie a{
+        font-size: 14px;
+    }
+}
+
+
 
 
 
