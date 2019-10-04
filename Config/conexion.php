@@ -1,11 +1,17 @@
 <?php 
 
-/* Conexion a la base de datos */
-/* try{
-    $pdo = new PDO('mysql:host=localhost;dbname=turismo', 'root', '');
-} catch (PDOException $e){
-    print "Error: ".$e->getMessage()."<br/>";
-    die();
-} */
+    class Base_Datos {
+
+        function conexion(){
+            $server = "localhost";
+            $usuario = "root";
+            $contraseña = "";
+            $basedeDatos = "turismo";
+
+            $conectar = mysqli_connect($server, $usuario, $contraseña, $basedeDatos) or 
+            die ("Error al conectar a la base de datos");
+        }
+
+    }
 
 ?>
