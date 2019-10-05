@@ -1,4 +1,4 @@
-<h1>Pueblos</h1>
+<h1 class="text-center">Pueblos</h1>
 
 <?php
     $id = 1;
@@ -9,15 +9,42 @@
     $particion = explode("-","$todosLosDatos");
     $nombre = $particion[0];
     $descripcion = $particion[1];
-    $hoteles = $particion[2];
-    $restaurantes = $particion[3];
-    $coordenadas = $particion[4];
+    // $hoteles = $particion[2];
+    // $restaurantes = $particion[3];
+    // $coordenadas = $particion[4];
 ?>
 
-<h1>El nombre del pueblo es <?=$nombre?></h1>
+<div class="card-group mx-2 text-center">
+  <div class="card mr-2">
+    <img src="Recursos/img/3.jpg" class="card-img-top" alt="Diferentes pueblos">
+    <div class="card-body">
+      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
+      <p class="card-text"><?=$descripcion?></p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+    </div>
+  </div>
 
-<h3>La descripcion del pueblo es <?=$descripcion?></h3>
+  <div class="card mr-2">
+    <img src="Recursos/img/3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
+      <p class="card-text"><?=$descripcion?></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+    </div>
+  </div>
 
-<p>Cuenta con hoteles como <?=$hoteles?></p>
-<p>Cuenta con restaurantes como <?=$restaurantes?></p>
-<p>y sus coordenadas son <?=$coordenadas?></p>
+  <div class="card">
+    <img src="Recursos/img/3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
+      <p class="card-text"><?=$descripcion?></p>
+    </div>
+    <div class="card-footer">
+    <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+    </div>
+  </div>
+</div>

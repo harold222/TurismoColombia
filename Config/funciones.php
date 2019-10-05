@@ -97,6 +97,8 @@ class Funciones extends Base_Datos{
         return "125478.212 145";
     }
 
+    
+
 
 }
 ?>

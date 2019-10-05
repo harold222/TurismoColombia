@@ -57,7 +57,6 @@
                 <div class="nav">
                     <a href="?p=principal"><i class="fas fa-home"></i><span class="quitar">Inicio</span></a>
                     <a href="?p=pueblos"><i class="fas fa-place-of-worship"></i><span class="quitar">Pueblos</span></a>
-                    <a href="?p=hoteles"><i class="fas fa-globe-americas"></i><span class="quitar">Hoteles</span></a>
                     <a href="?p=contacto"><i class="far fa-envelope"></i><span class="quitar">Contactanos</span></a>
                 </div>
 
