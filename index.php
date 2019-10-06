@@ -1,5 +1,6 @@
 <?php
-    require_once("Config/funciones.php");
+    include_once("Config/funciones.php");
+    $datos = new Funciones;
 
     if(!isset($p))
         $p = "principal"; /* Siempre redigire al modulo principal */

@@ -1,50 +1,47 @@
 <h1 class="text-center">Pueblos</h1>
 
 <?php
-    $id = 1;
+    // $id = 1;
 
-    $obtenerPueblo = new Funciones;
-    $todosLosDatos = $obtenerPueblo->obtenerDatosPueblo($id);
+    // $obtenerPueblo = new Funciones;
+    // $todosLosDatos = $obtenerPueblo->obtenerDatosPueblo($id);
 
-    $particion = explode("-","$todosLosDatos");
-    $nombre = $particion[0];
-    $descripcion = $particion[1];
+    // $particion = explode("-","$todosLosDatos");
+    // $nombre = $particion[0];
+    // $descripcion = $particion[1];
     // $hoteles = $particion[2];
     // $restaurantes = $particion[3];
     // $coordenadas = $particion[4];
 ?>
 
 <div class="card-group mx-2 text-center">
+  <?php
+    for ($i=1; $i < 4; $i++) { 
+      $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($i));
+      $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($i));
+      $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i));
+  ?>
   <div class="card mr-2">
-    <img src="Recursos/img/3.jpg" class="card-img-top" alt="Diferentes pueblos">
+    <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
     <div class="card-body">
-      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
-      <p class="card-text"><?=$descripcion?></p>
+      <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>
+      <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
     </div>
     <div class="card-footer">
-        <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+        <small class="text-muted"> <a href="?p=pueblo&id=<?= $i ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
     </div>
   </div>
+<?php
+  }
+?>
 
-  <div class="card mr-2">
-    <img src="Recursos/img/3.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
-      <p class="card-text"><?=$descripcion?></p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="Recursos/img/3.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-uppercase"><?=$nombre?></h5>
-      <p class="card-text"><?=$descripcion?></p>
-    </div>
-    <div class="card-footer">
-    <small class="text-muted"> <a href="" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
-    </div>
-  </div>
 </div>
+
+  
+
+<nav class="navegacion">
+    <a href="">Inicio</a>
+    <a href="">1</a>
+    <a href="">2</a>
+    <a href="">Final</a>
+</nav>

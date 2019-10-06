@@ -53,66 +53,46 @@
 <section class="section">
 
     <div class="articulos">
-        <article class="article">
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
-            <h3>Zipaquira</h3>
-            <h2>Lugar bello de cundinamarca</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos iste perferendis incidunt eos molestiae, rerum necessitatibus porro, pariatur esse veniam rem possimus numquam repudiandae? Nobis vero, suscipit deleniti dolores necessitatibus quos inventore voluptatum aut accusamus excepturi quibusdam culpa cupiditate, alias repellat perferendis sint. Ea inventore quam quibusdam asperiores quis.</p>
-            <button type="button" class="btn btn-info">Ver mas</button>
-        </article>
+        <?php
+        for ($i=1; $i < 4; $i++) {
+            $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($i));
+            $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($i));
+            $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i));
+            ?>
+            <article class="article">
+                <a href="?p=pueblo&id=<?= $i ?>"><img src="Recursos/img/<?=$resultImg['imagen']?>" alt="Imagen del pueblo"></a>
+                    <h3><?= $resultNombre['nombrePueblo'] ?></h3>
+                    <h2>Lugar bello de cundinamarca</h2> <br>
+                    <p><?= $resultdescrip['descripcion'] ?></p>
+                    <button type="button" class="btn btn-info">Ver mas</button>
+                </article>
+        <?php
+            }
+        ?>
 
-        <article class="article">
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
-            <h3>Caqueza</h3>
-            <h2>Lugar bello de cundinamarca</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos iste perferendis incidunt eos molestiae, rerum necessitatibus porro, pariatur esse veniam rem possimus numquam repudiandae? Nobis vero, suscipit deleniti dolores necessitatibus quos inventore voluptatum aut accusamus excepturi quibusdam culpa cupiditate, alias repellat perferendis sint. Ea inventore quam quibusdam asperiores quis.</p>
-            <button type="button" class="btn btn-info">Ver mas</button>
-        </article>
-
-        <article class="article">
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
-            <h3>Zipaquira</h3>
-            <h2>Lugar bello de cundinamarca</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos iste perferendis incidunt eos molestiae, rerum necessitatibus porro, pariatur esse veniam rem possimus numquam repudiandae? Nobis vero, suscipit deleniti dolores necessitatibus quos inventore voluptatum aut accusamus excepturi quibusdam culpa cupiditate, alias repellat perferendis sint. Ea inventore quam quibusdam asperiores quis.</p>
-            <button type="button" class="btn btn-info">Ver mas</button>
-        </article>
-
-        <article class="article">
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
-            <h3>Zipaquira</h3>
-            <h2>Lugar bello de cundinamarca</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos iste perferendis incidunt eos molestiae, rerum necessitatibus porro, pariatur esse veniam rem possimus numquam repudiandae? Nobis vero, suscipit deleniti dolores necessitatibus quos inventore voluptatum aut accusamus excepturi quibusdam culpa cupiditate, alias repellat perferendis sint. Ea inventore quam quibusdam asperiores quis.</p>
-            <button type="button" class="btn btn-info">Ver mas</button>
-        </article>
-
-        <nav class="navegacion">
-            <a href="">Inicio</a>
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">Final</a>
-        </nav>
+        
     </div>
 
     <aside class="aside">
         <!-- Puede ser categorias de lugares como cundinamarca, bla -->
-        <div class="publicidad">
-            <h4>Region Amazonica</h4>
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
+        <div class="publicidad text-center">
+            <h5>Departamento Cundinamarca</h5>
+            <a href=""><img src="Recursos/img/cundinamarca.jpg"  width="100%" height="220px" alt=""></a>
         </div>
 
         <div class="publicidad">
-            <h4>Region pacifica</h4>
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
+            <h5>Departamento Meta</h5>
+            <a href=""><img src="Recursos/img/meta.jpg" width="100%" height="220px" alt=""></a>
         </div>
 
         <div class="publicidad">
-            <h4>Region caribe</h4>
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
+            <h5>Departamento Antioquia</h5>
+            <a href=""><img src="Recursos/img/anqtioquia.jpg" width="100%" height="220px" alt=""></a>
         </div>
 
         <div class="publicidad">
-            <h4>Region insular</h4>
-            <a href=""><img src="Recursos/img/3.jpg" alt=""></a>
+            <h5>Departamento Casanare</h5>
+            <a href=""><img src="Recursos/img/casanare.jpg" width="100%" height="220px" alt=""></a>
         </div>
     </aside>
 </section>

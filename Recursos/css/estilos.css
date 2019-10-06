@@ -208,15 +208,14 @@ background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(2
     margin: 10px 5px 10px 0px;
 }
 
-.aside h4{
+.aside h5{
     background: #000;
     color: #fff;
     padding:10px;
     transition: all 1s;
 }
 
-.aside h4:hover{
-    text-align: center;
+.aside h5:hover{
     color: rgb(243, 197, 197);
 }
 
@@ -427,7 +426,7 @@ background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(2
 
     .article h3{
         font-size: 30px;
-        margin-top: -120px;
+        margin-top: -140px;
     }
 
    .article h2{

@@ -2,7 +2,7 @@
 
     class Base_Datos {
 
-        function conexion(){
+        public function conexion(){
             $server = "localhost";
             $usuario = "root";
             $contraseña = "";
@@ -10,8 +10,15 @@
 
             $conectar = mysqli_connect($server, $usuario, $contraseña, $basedeDatos) or 
             die ("Error al conectar a la base de datos");
+            return $conectar;
+        }
+
+        public function CerrarConexion($conectar){
+            mysqli_close($conectar);
         }
 
     }
+
+    class Objeto{}
 
 ?>
