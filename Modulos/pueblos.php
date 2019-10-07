@@ -1,47 +1,68 @@
 <h1 class="text-center">Pueblos</h1>
 
 <?php
-    // $id = 1;
+  if(isset($_GET['departamento'])){ 
+    $cantidad = $datos->pueblosPorDepartamento($_GET['departamento']);
+    //recorro cado uno de las posiciones
+    while($row = $cantidad->fetch_array()){
+      $rows[] = $row;/* Paso los valores de ids a un array */
+    }
 
-    // $obtenerPueblo = new Funciones;
-    // $todosLosDatos = $obtenerPueblo->obtenerDatosPueblo($id);
+    if(empty($rows)){ /* Si no existen pueblos para ese departamento */
+      echo("<h1 class='text-center text-danger p-5'>No existen pueblos para este departamento</h1>");
+    }else{/* Si existe mas de un pueblo para este departamento */
+    ?>
+    <div class="card-columns mx-3">
+        <?php
+          foreach($rows as $row){ 
+            $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($row['id'],$_GET['departamento']));
+            $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($row['id'], $_GET['departamento']));
+            $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($row['id'], $_GET['departamento']));
+        ?>
 
-    // $particion = explode("-","$todosLosDatos");
-    // $nombre = $particion[0];
-    // $descripcion = $particion[1];
-    // $hoteles = $particion[2];
-    // $restaurantes = $particion[3];
-    // $coordenadas = $particion[4];
-?>
+        <div class="card">
+          <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>
+            <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"> <a href="?p=pueblo&id=<?=  $row['id'] ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+          </div>
+        </div>
 
-<div class="card-group mx-2 text-center">
+      <?php
+        }
+      ?>
+    </div>
   <?php
-    for ($i=1; $i < 4; $i++) { 
-      $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($i));
-      $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($i));
-      $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i));
-  ?>
-  <div class="card mr-2">
-    <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
-    <div class="card-body">
-      <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>
-      <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
-    </div>
-    <div class="card-footer">
-        <small class="text-muted"> <a href="?p=pueblo&id=<?= $i ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
-    </div>
-  </div>
-<?php
-  }
+    }/* Cierro el for que me recorre los departamentos */
+  }else{/* Si no existen criterios de busqueda */
 ?>
+  <div class="card-columns mx-3">
+    <?php
+      for ($i=1; $i < 5; $i++) { 
+        $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($i,0));
+        $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($i,0));
+        $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i,0));
+    ?>
 
+    <div class="card">
+      <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
+      <div class="card-body">
+        <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>
+        <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"> <a href="?p=pueblo&id=<?= $i ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+      </div>
+    </div>
+
+  <?php
+    }
+  ?>
 </div>
 
-  
-
-<nav class="navegacion">
-    <a href="">Inicio</a>
-    <a href="">1</a>
-    <a href="">2</a>
-    <a href="">Final</a>
-</nav>
+<?php /* Si no existe un departamento como busqueda */
+  }
+?>
