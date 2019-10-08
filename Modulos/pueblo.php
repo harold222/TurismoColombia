@@ -25,7 +25,7 @@
             <div class="row no-gutters">
 
                 <div class="col-md-5">
-                    <img src="Recursos/img/<?=$imagen?>" class="card-img mt-3">
+                    <img src="Recursos/img/<?=$imagen?>" class="card-img mt-3 ml-2">
                 </div>
 
                 <div class="col-md-7">

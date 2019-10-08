@@ -40,7 +40,6 @@ class Funciones extends Base_Datos{
         echo '</script>';
     }
    
-
     function obtenerDatosPueblo($id): string{
         $imagen = new Funciones;
         $nombre = new Funciones;
