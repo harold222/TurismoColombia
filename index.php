@@ -49,7 +49,7 @@
 
             <div class="menu">
                 <div class="logo">
-                    <a href="index.html"> 
+                    <a href="index.php"> 
                         <img src="Recursos/img/1.png" width="70" height="70">
                         ColombiaTravel
                     </a>
