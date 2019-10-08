@@ -293,6 +293,7 @@ background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(2
     bottom: 0;
     width: 100%;
     position: fixed;
+    z-index: 100;
 }
 
 .pie{
@@ -310,6 +311,11 @@ background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(2
     letter-spacing: 2px;
 }
 /*---------------------Fin de estilos para el footer--------------------*/
+
+.contenedorPueblos{
+    background: rgba(99, 98, 98, 0.11);
+    border: 0px;
+}
 
 /*-------------------------------Estilos Responsive----------------------------*/
 
@@ -419,6 +425,10 @@ background: linear-gradient(0deg, rgba(80,221,223,0.8519782913165266) 0%, rgba(2
 		width: 350px;
 		margin: auto;
 	}
+
+    .cambiarTitulo{
+        font-size: 30px;
+    }
 
 }
 

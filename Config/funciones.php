@@ -42,26 +42,25 @@ class Funciones extends Base_Datos{
    
 
     function obtenerDatosPueblo($id): string{
-        
-        /* Esta funcion retornara todos los datos de un pueblo invocando otras funciones */
         $imagen = new Funciones;
         $nombre = new Funciones;
         $descripcion = new Funciones;
-        $hoteles = new Funciones;
-        $restaurantes = new Funciones;
         $coordenadas = new Funciones;
         $departamento = new Funciones;
         
-        $a =  mysqli_fetch_assoc($descripcion->obtenerDescripcionPueblo($id, 0)); 
-        $b =  mysqli_fetch_assoc($hoteles->obtenerHoteles($id));
-        $c =  mysqli_fetch_assoc($restaurantes->obtenerRestaurantes($id));
-        $d =  mysqli_fetch_assoc($coordenadas->obtenerCoordenadas($id));
-        $e =  mysqli_fetch_assoc($nombre->obtenerNombrePueblo($id, 0));
         $f =  mysqli_fetch_assoc($imagen->obtenerImagen($id, 0));
+        $e =  mysqli_fetch_assoc($nombre->obtenerNombrePueblo($id, 0));
+        $a =  mysqli_fetch_assoc($descripcion->obtenerDescripcionPueblo($id, 0)); 
+        $d =  mysqli_fetch_assoc($coordenadas->obtenerCoordenadas($id));
         $g = mysqli_fetch_assoc($departamento->obtenerDepartamento($id));
 
+        $consulta = "SELECT departamento FROM Departamento WHERE id = '$g[idDepartamento]'"; //obtengo el nombre del departamento
+        $resultado = mysqli_query($this->conexionBase->conexion(),$consulta) or die ("Error al obtener el nombre del departamento");
+        $this->desconectar->CerrarConexion($this->conexionBase->conexion());
 
-        return $f['imagen']."-".$e['nombrePueblo']."-".$a['descripcion']."-".$b['hoteles']."-".$c['restaurantes']."-".$d['coordenadas'];
+        $depart = mysqli_fetch_assoc($resultado);
+
+        return $f['imagen']."*".$e['nombrePueblo']."*".$a['descripcion']."*".$d['coordenadas']."*".$depart['departamento'];
     }
 
     function obtenerImagen($id, $iddepartamento){
