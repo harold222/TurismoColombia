@@ -21,6 +21,10 @@
         $departament = $particion[4];
 
         ?>    
+<!-- Libreria mapbox para la visualizacion del mapa -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
+
         <div class="card my-3 contenedorPueblos">
             <div class="row no-gutters">
 
@@ -76,17 +80,38 @@
             </div>
         </div>
 
-        <div class="container-fluid">
+        <?php
+            $subcoordenadas = explode(",","$coordenadas"); /* separo las dos */
+            $latitud = $subcoordenadas[0]; /* obtengo la posicion en el mapa del pueblo */
+            $longitud = $subcoordenadas[1];
+        ?>
+
+        <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center text-danger"><?= $nombre ?> se encuentra ubicado en</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31796.03982938609!2d-74.00665812529411!3d5.021518417869913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e406fdf15000d3b%3A0x3ab218bb9961424e!2sZipaquir%C3%A1%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1570392104799!5m2!1ses-419!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <div id="map"></div><!-- Aca ira el mapa del pueblo -->
                 </div>
-
             </div>
-                
         </div>
-  
+
+        <script>
+            /* api key unica para la aplicacion */
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyb2xkMjIyIiwiYSI6ImNrMWk2djlhNDFtejEzZG12dTh4YjRkZWQifQ._tkCay83oFzd0BTTdw4DDA';
+            let map = new mapboxgl.Map({
+                container: 'map', //lugar donde aarecera el mapa
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [<?= $longitud ?>,<?= $latitud ?>], /* Coordenadas del pueblo */
+                zoom: 14
+            });
+
+            let element = document.createElement('div') //creo un div para el marcaodor
+            element.className = 'marker' //añado la clase
+
+            let marker = new mapboxgl.Marker(element).setLngLat({
+                lng: <?= $longitud ?>, //lo posiciono en las mismas coordenadas
+                lat: <?= $latitud ?>
+            }).addTo(map)
+        </script>
 <?php
     }else{
         header("Location: ?p=principal");

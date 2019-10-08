@@ -40,6 +40,7 @@
     <script type="text/javascript" src="Recursos/bootstrap/js/bootstrap.js"></script>
     <!-- Libreria de alertas de sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
     
