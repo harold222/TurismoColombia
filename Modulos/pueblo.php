@@ -33,29 +33,45 @@
                     <h5 class="card-title display-4 text-center cambiarTitulo"><?= $nombre ?> - <?= $departament ?></h5>
                     <p class="card-text text-justify"><?= $descripcion ?></p>
 
-                    <ul class="list-group text-center">
-                        <li class="list-group-item active text-uppercase h5">Hoteles existentes</li>
-                    <!-- <p class="card-text">Hoteles existentes:</p> -->
-                    <?php
-                        foreach($rows as $row){ /* Recorro todos lo hoteles existentes en dicho pueblo*/
-                    ?>
-                        <li class="list-group-item"><?= $row['hoteles']?></li>
-                    <?php
-                        }
-                    ?>
-                    </ul>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class ="col-12">
+                                            <div class="list-group" id="list-tab" role="tablist">
+                                                <a class="list-group-item list-group-item-action text-center" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Ver hoteles existentes</a>
+                                                <a class="list-group-item list-group-item-action text-center" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Ver restaurantes existentes</a>
+                                            </div>
+                                        </div>
 
-                    <ul class="list-group mt-5 text-center">
-                        <li class="list-group-item active text-uppercase h5">Restaurantes existentes</li>
-                        <?php
-                            foreach($rows2 as $row2){
-                        ?>
-                            <li class="list-group-item"><?= $row2['restaurantes']?></li>
-                        <?php
-                            }
-                        ?>
-                    </ul>
-                </div>
+                                        <div class="col-12">
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                                    <ul class="list-group mt-2 text-center">
+                                                    <?php
+                                                        foreach($rows as $row){ /* Recorro todos lo hoteles existentes en dicho pueblo*/
+                                                    ?>
+                                                        <li class="list-group-item"><?= $row['hoteles']?></li>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                    </ul>
+                                                </div>
+
+                                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                                            <ul class="list-group mt-2 text-center"><!-- Al hacer click llamo a  esta clase -->
+                                                <?php
+                                                    foreach($rows2 as $row2){
+                                                ?>
+                                                    <li class="list-group-item"><?= $row2['restaurantes']?></li>
+                                                <?php
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,11 +86,7 @@
             </div>
                 
         </div>
-
-
-
-
-
+  
 <?php
     }else{
         header("Location: ?p=principal");
