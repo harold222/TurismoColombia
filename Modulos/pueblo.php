@@ -28,19 +28,21 @@
         <div class="card my-3 contenedorPueblos">
             <div class="row no-gutters">
 
-                <div class="col-md-5">
+                <div class="col-md-5 wow slideInLeft" data-wow-offset = "30" data-wow-iteration = "1">
                     <img src="Recursos/img/<?=$imagen?>" class="card-img mt-3 ml-2">
                 </div>
 
                 <div class="col-md-7">
                 <div class="card-body">
-                    <h5 class="card-title display-4 text-center cambiarTitulo"><?= $nombre ?> - <?= $departament ?></h5>
+                    <h5 class="card-title display-4 text-center cambiarTitulo wow slideInRight" data-wow-offset = "30" data-wow-iteration = "1">
+                        <?= $nombre ?> - <?= $departament ?>
+                    </h5>
                     <p class="card-text text-justify"><?= $descripcion ?></p>
 
                                 <div class="container">
                                     <div class="row">
                                         <div class ="col-12">
-                                            <div class="list-group" id="list-tab" role="tablist">
+                                            <div class="list-group wow slideInUp" data-wow-offset = "30" data-wow-iteration = "1" id="list-tab" role="tablist">
                                                 <a class="list-group-item list-group-item-action text-center" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Ver hoteles existentes</a>
                                                 <a class="list-group-item list-group-item-action text-center" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Ver restaurantes existentes</a>
                                             </div>
@@ -49,7 +51,7 @@
                                         <div class="col-12">
                                             <div class="tab-content" id="nav-tabContent">
                                                 <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                                    <ul class="list-group mt-2 text-center">
+                                                    <ul class="list-group mt-2 text-center" >
                                                     <?php
                                                         foreach($rows as $row){ /* Recorro todos lo hoteles existentes en dicho pueblo*/
                                                     ?>

@@ -1,4 +1,4 @@
-<h1 class="text-center">Pueblos</h1>
+<br><h1 class="text-center display-4 text-uppercase text-light animated infinite flash">Pueblos</h1>
 
 <?php
   if(isset($_GET['departamento'])){ 
@@ -12,7 +12,7 @@
       echo("<h1 class='text-center text-danger p-5'>No existen pueblos para este departamento</h1>");
     }else{/* Si existe mas de un pueblo para este departamento */
     ?>
-    <div class="card-columns mx-3">
+    <div class="card-columns mx-3" >
         <?php
           foreach($rows as $row){ 
             $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($row['id'],$_GET['departamento']));
@@ -20,7 +20,7 @@
             $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($row['id'], $_GET['departamento']));
         ?>
 
-        <div class="card">
+        <div class="card wow rollIn" data-wow-offset = "30" data-wow-iteration = "1">
           <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
           <div class="card-body">
             <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>
@@ -47,7 +47,7 @@
         $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i,0));
     ?>
 
-    <div class="card">
+    <div class="card wow rollIn" data-wow-offset = "30" data-wow-iteration = "1">
       <img src="Recursos/img/<?=$resultImg['imagen']?>" class="card-img-top" alt="Diferentes pueblos">
       <div class="card-body">
         <h5 class="card-title text-uppercase"><?= $resultNombre['nombrePueblo'] ?></h5>

@@ -73,26 +73,28 @@
         
     </div>
 
+    <div class="wow jackInTheBox" data-wow-offset = "10" data-wow-iteration = "1">
     <aside class="aside">
         <!-- Puede ser categorias de lugares como cundinamarca, bla -->
-        <div class="publicidad text-center">
+        <div class="publicidad text-center wow jackInTheBox" data-wow-offset = "30" data-wow-iteration = "1">
             <h5>Departamento Cundinamarca</h5>
             <a href="?p=pueblos&departamento=1"><img src="Recursos/img/cundinamarca.jpg"  width="100%" height="220px" alt=""></a>
         </div>
 
-        <div class="publicidad text-center">
+        <div class="publicidad text-center wow jackInTheBox" data-wow-offset = "30" data-wow-iteration = "1">
             <h5>Departamento Meta</h5>
             <a href="?p=pueblos&departamento=2"><img src="Recursos/img/meta.jpg" width="100%" height="220px" alt=""></a>
         </div>
 
-        <div class="publicidad text-center">
-            <h5>Departamento Antioquia</h5>
+        <div class="publicidad text-center wow jackInTheBox" data-wow-offset = "30" data-wow-iteration = "1">
+            <h5>Departamento Antioquia</h5> 
             <a href="?p=pueblos&departamento=3"><img src="Recursos/img/anqtioquia.jpg" width="100%" height="220px" alt=""></a>
         </div>
 
-        <div class="publicidad text-center">
+        <div class="publicidad text-center wow jackInTheBox" data-wow-offset = "30" data-wow-iteration = "1">
             <h5>Departamento Casanare</h5>
             <a href="?p=pueblos&departamento=4"><img src="Recursos/img/casanare.jpg" width="100%" height="220px" alt=""></a>
         </div>
     </aside>
+    
 </section>

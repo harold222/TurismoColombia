@@ -23,12 +23,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="Recursos/img/1.png">
     <!-- Estilos de fontAwesome -->
     <link rel="stylesheet" href="Recursos/fontAwesome/css/all.min.css">
-    <!-- Light box para galeria de imagenes -->
-    <link rel="stylesheet" type="text/css" href="Recursos/css/lightbox.min.css">
     <!-- Fuente de texto de google -->
     <link href="https://fonts.googleapis.com/css?family=Kalam:400,700&display=swap" rel="stylesheet">
     <!-- Estilos de Bootstrap -->
     <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
+    <!-- Animaciones libreria externa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- Estilos generales de la pagina -->
     <link rel="stylesheet" href="Recursos/css/estilos.css">
     
@@ -40,6 +40,12 @@
     <script type="text/javascript" src="Recursos/bootstrap/js/bootstrap.js"></script>
     <!-- Libreria de alertas de sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Libreira de wow.js para scroll con animacines -->
+    <script src="Recursos/js/wow.min.js"></script>
+    <!-- Inicializo el plugin -->
+    <script>
+        new WOW().init();
+    </script>
 
 </head>
 <body>
@@ -51,12 +57,16 @@
             <div class="menu">
                 <div class="logo">
                     <a href="index.php"> 
+
+                    <div class="animated zoomInUp">
                         <img src="Recursos/img/1.png" width="70" height="70">
+                        
                         ColombiaTravel
+                    </div>
                     </a>
                 </div>
 
-                <div class="nav">
+                <div class="nav animated zoomInUp">
                     <a href="?p=principal"><i class="fas fa-home"></i><span class="quitar">Inicio</span></a>
                     <a href="?p=pueblos"><i class="fas fa-place-of-worship"></i><span class="quitar">Pueblos</span></a>
                     <a href="?p=contacto"><i class="far fa-envelope"></i><span class="quitar">Contactanos</span></a>
@@ -64,7 +74,7 @@
 
                 <div class="social">
                     <div>
-                        <a href="">
+                        <a href="" class="animated zoomInUp">
                             <span class="glyphicon glyphicon-search"></span>
                             Buscar
                         </a>
