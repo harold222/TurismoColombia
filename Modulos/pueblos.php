@@ -27,7 +27,7 @@
             <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
           </div>
           <div class="card-footer">
-            <small class="text-muted"> <a href="?p=pueblo&id=<?=  $row['id'] ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+            <small class="text-muted"> <a href="?p=PuebloEscogido&id=<?=  $row['id'] ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
           </div>
         </div>
 
@@ -54,7 +54,7 @@
         <p class="card-text"><?= $resultdescrip['descripcion'] ?></p>
       </div>
       <div class="card-footer">
-        <small class="text-muted"> <a href="?p=pueblo&id=<?= $i ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
+        <small class="text-muted"> <a href="?p=PuebloEscogido&id=<?= $i ?>" class="btn btn-outline-danger btn-block">Ver mas</a> </small>
       </div>
     </div>
 

@@ -14,31 +14,6 @@ class Funciones extends Base_Datos{
         $this->conexionBase = new Base_Datos;
         $this->desconectar = new Base_Datos;
     }
-
-    function redir($var){
-        ?>
-            <script>
-                window.location="<?=$var?>";
-            </script>
-        <?php
-        die();
-    }
-    
-    function alert($txt,$type,$url){
-        if($type==0)
-            $t = "error";
-        else if($type==1)
-            $t = "success";/* Tipos de mensajes */
-        else if($type==2)
-            $t = "info";
-        else
-            $t = "info";
-    
-            /* Se puede cambiar el mensaje de alerta */
-        echo '<script>swal({ title: "Alerta", text: "'.$txt.'", icon: "'.$t.'"});';
-        echo '$(".swal-button").click(function(){ window.location="?p='.$url.'"; });';
-        echo '</script>';
-    }
    
     function obtenerDatosPueblo($id): string{
         $imagen = new Funciones;

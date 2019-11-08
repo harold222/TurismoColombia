@@ -49,7 +49,6 @@
 
 </head>
 <body>
-    
     <div class="padre">
 
         <header class="header">
@@ -60,7 +59,6 @@
 
                     <div class="animated zoomInUp">
                         <img src="Recursos/img/1.png" width="70" height="70">
-                        
                         ColombiaTravel
                     </div>
                     </a>
@@ -72,14 +70,6 @@
                     <a href="?p=contacto"><i class="far fa-envelope"></i><span class="quitar">Contactanos</span></a>
                 </div>
 
-                <div class="social">
-                    <div>
-                        <a href="" class="animated zoomInUp">
-                            <span class="glyphicon glyphicon-search"></span>
-                            Buscar
-                        </a>
-                    </div>
-                </div>
 
             </div>
 

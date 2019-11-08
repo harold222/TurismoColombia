@@ -60,7 +60,7 @@
             $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i, 0));
             ?>
             <article class="article">
-                <a href="?p=pueblo&id=<?= $i ?>"><img src="Recursos/img/<?=$resultImg['imagen']?>" alt="Imagen del pueblo"></a>
+                <a href="?p=PuebloEscogido&id=<?= $i ?>"><img src="Recursos/img/<?=$resultImg['imagen']?>" alt="Imagen del pueblo"></a>
                     <h3><?= $resultNombre['nombrePueblo'] ?></h3>
                     <h2>Lugar bello de cundinamarca</h2> <br>
                     <p><?= $resultdescrip['descripcion'] ?></p>
