@@ -32,14 +32,12 @@
     <!-- Estilos generales de la pagina -->
     <link rel="stylesheet" href="Recursos/css/estilos.css">
     
-    <!-- Archivo JS -->
+    <!-- Archivo JS --> 
     <script src="Recursos/js/app.js"></script>
     <!-- Libreria de Jquery -->
     <script src="Recursos/js/jquery.js"></script>
     <!-- Js de bootstrap unicamente para cargar la ventana modal del modulo principal -->
     <script type="text/javascript" src="Recursos/bootstrap/js/bootstrap.js"></script>
-    <!-- Libreria de alertas de sweetalert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Libreira de wow.js para scroll con animacines -->
     <script src="Recursos/js/wow.min.js"></script>
     <!-- Inicializo el plugin -->

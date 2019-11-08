@@ -1,14 +1,8 @@
-window.addEventListener("load", function(){/* Funcion para se ejecute cuando se carguen todos los elementos DOM */
-
-    // Aca iria alguna animiacion que desee
-
-});
-
 function validarFormulario(){
-    var expresionNombre, expresionCorreo;
+    var expresionnombre, expresionCorreo;
+
     let nombre = document.querySelector('#nombre').value;
     let correo = document.querySelector('#correo').value;
-    let telefono = document.querySelector('#telefono').value;
     let mensaje = document.querySelector('#mensaje').value;
 
     expresionnombre = /^([A-Za-z\s])*$/; //que solo sean letras
@@ -32,11 +26,6 @@ function validarFormulario(){
     }else if(!expresionCorreo.test(correo)){
         alert("El correo no es valido");
         return false;
-    }else if(telefono.length > 11){
-        alert('El telefono supera el limite de caracteres.');
-        return false;
-    }else if(isNaN(telefono)){ //si no es un numero
-        alert('El telefono no es un numero');
-        return false;
     }
+
 }

@@ -12,10 +12,9 @@ class Correo{
     }
 
     function enviarCorreo(){
-        $destino= "correoPruebas@gmail.com"; //a que correo se enviara
+        $destino= "hpedrazamur@uniminuto.edu.co"; //a que correo se enviara
         $contenido = "Nombre ". $this->nombre ."\nCorreo: ".$this->correo . "\n\n\tEl mensaje que ha dejado es: ".$this->mensaje;
         mail($destino,"Desde el formulario del contacto", $contenido);
-        // Funcion mail solo sirve desde internet
         header("Location:../?p=principal");
     }
 }
