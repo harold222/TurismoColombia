@@ -41,7 +41,7 @@
 ?>
   <div class="card-columns mx-3">
     <?php
-      for ($i=1; $i < 5; $i++) { 
+      for ($i=1; $i < 14; $i++) { 
         $resultImg = mysqli_fetch_assoc($datos-> obtenerImagen($i,0));
         $resultNombre = mysqli_fetch_assoc($datos->obtenerNombrePueblo($i,0));
         $resultdescrip = mysqli_fetch_assoc($datos->obtenerDescripcionPueblo($i,0));
